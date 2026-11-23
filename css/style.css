@@ -2173,3 +2173,25 @@ button:focus-visible {
 .education-card:hover .education-status {
     color: var(--crimson-bright);
 }
+
+/* PORTFOLIO CONTENT REFRESH — FLAGSHIP PROJECT PRESENTATION */
+.avenor-preview { background: radial-gradient(ellipse at 75% 25%, rgba(181,18,38,.22), transparent 48%), linear-gradient(135deg, #111b19, #07100f 62%, #17110f); }
+.avenor-preview::before, .avenor-preview::after { border-color: rgba(210,190,150,.28); }
+.avenor-preview .preview-topline { color: #c8c1b2; }
+.avenor-preview .preview-eyebrow { color: #d8c7a4; }
+.avenor-wordmark { color: #f0e9d9; font-family: var(--font-heading); font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 600; letter-spacing: -.08em; }
+.avenor-wordmark span { color: #c6a96b; }
+.tolab-preview { background: radial-gradient(ellipse at 75% 25%, rgba(190,164,112,.16), transparent 48%), linear-gradient(135deg, #101c2b, #07111d 65%, #17212a); }
+.tolab-preview::before, .tolab-preview::after { border-color: rgba(190,164,112,.3); }
+.tolab-preview .preview-eyebrow { color: #d0bd91; }
+.tolab-wordmark { color: #f0f0eb; font-family: var(--font-heading); font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 700; letter-spacing: -.08em; }
+.tolab-wordmark span { color: #c5a66e; }
+.project-card--featured { grid-column: 1 / -1; }
+.project-card--featured .project-preview { min-height: 300px; }
+.project-highlights { display: grid; gap: 7px; margin: 16px 24px 0; padding-left: 17px; color: #aaa; font-size: 12px; line-height: 1.65; }
+.project-highlights li::marker { color: var(--crimson-bright); }
+@media (max-width: 680px) {
+ .project-card--featured { grid-column: auto; }
+ .project-card--featured .project-preview { min-height: 230px; }
+ .project-highlights { margin-left: 18px; margin-right: 18px; font-size: 11px; }
+}
