@@ -1232,7 +1232,7 @@ img {
 .preview-topline, .preview-index { position: absolute; z-index: 1; top: 20px; left: 22px; right: 22px; display: flex; justify-content: space-between; color: #bcbcbc; font-size: .62rem; letter-spacing: .14em; }
 
 .preview-index { top: auto; bottom: 18px; left: auto; justify-content: end; }
-.zesty-preview-body, .telnet-preview-body { z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+.zesty-preview-body, .telnet-preview-body, .tolab-preview-body, .avenor-preview-body { z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
 .preview-eyebrow {
     color: #aaa;
     font-size: .6rem;
@@ -2172,4 +2172,98 @@ button:focus-visible {
 
 .education-card:hover .education-status {
     color: var(--crimson-bright);
+}
+
+/* PORTFOLIO CONTENT REFRESH — FLAGSHIP PROJECT PRESENTATION */
+.avenor-preview { background: radial-gradient(ellipse at 75% 25%, rgba(181,18,38,.22), transparent 48%), linear-gradient(135deg, #111b19, #07100f 62%, #17110f); }
+.avenor-preview::before, .avenor-preview::after { border-color: rgba(210,190,150,.28); }
+.avenor-preview .preview-topline { color: #c8c1b2; }
+.avenor-preview .preview-eyebrow { color: #d8c7a4; }
+.avenor-wordmark { color: #f0e9d9; font-family: var(--font-heading); font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 600; letter-spacing: -.08em; }
+.avenor-wordmark span { color: #c6a96b; }
+.tolab-preview { background: radial-gradient(ellipse at 75% 25%, rgba(190,164,112,.16), transparent 48%), linear-gradient(135deg, #101c2b, #07111d 65%, #17212a); }
+.tolab-preview::before, .tolab-preview::after { border-color: rgba(190,164,112,.3); }
+.tolab-preview .preview-eyebrow { color: #d0bd91; }
+.tolab-wordmark { color: #f0f0eb; font-family: var(--font-heading); font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 700; letter-spacing: -.08em; }
+.tolab-wordmark span { color: #c5a66e; }
+.project-card--featured { grid-column: 1 / -1; }
+.project-card--featured .project-preview { min-height: 300px; }
+.project-highlights { display: grid; gap: 7px; margin: 16px 24px 0; padding-left: 17px; color: #aaa; font-size: 12px; line-height: 1.65; }
+.project-highlights li::marker { color: var(--crimson-bright); }
+@media (max-width: 680px) {
+ .project-card--featured { grid-column: auto; }
+ .project-card--featured .project-preview { min-height: 230px; }
+ .project-highlights { margin-left: 18px; margin-right: 18px; font-size: 11px; }
+}
+
+
+/* TOLAB preview spacing and wordmark scale refinement */
+.tolab-preview-body {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+    width: 100%;
+    padding: 12px 16px;
+    text-align: center;
+}
+.tolab-preview-body .preview-eyebrow {
+    max-width: 100%;
+    font-size: .56rem;
+    letter-spacing: .16em;
+    line-height: 1.6;
+}
+.tolab-preview-body .tolab-wordmark {
+    margin: 2px 0 5px;
+    font-size: clamp(2.25rem, 4vw, 3.35rem);
+    line-height: 1.05;
+    letter-spacing: -.055em;
+}
+.tolab-preview-body .preview-caption {
+    margin-top: 1px;
+    line-height: 1.65;
+}
+@media (max-width: 680px) {
+    .tolab-preview-body { gap: 15px; }
+    .tolab-preview-body .tolab-wordmark { font-size: clamp(2.1rem, 9vw, 2.8rem); }
+}
+
+
+/* Floating WhatsApp contact shortcut */
+.whatsapp-float {
+    position: fixed;
+    right: 26px;
+    bottom: 26px;
+    z-index: 999;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 58px;
+    height: 58px;
+    padding: 0 17px;
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 999px;
+    background: #20b95a;
+    color: #fff;
+    box-shadow: 0 8px 28px rgba(0,0,0,.38);
+    text-decoration: none;
+    transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.whatsapp-float svg { display: block; width: 29px; height: 29px; flex: 0 0 auto; }
+.whatsapp-float-label { font-size: .82rem; font-weight: 600; white-space: nowrap; }
+.whatsapp-float:hover {
+    transform: translateY(-3px);
+    background: #169e49;
+    box-shadow: 0 12px 32px rgba(0,0,0,.45);
+}
+.whatsapp-float:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+@media (max-width: 600px) {
+    .whatsapp-float { right: 17px; bottom: 18px; width: 56px; min-width: 56px; height: 56px; padding: 0; }
+    .whatsapp-float-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .whatsapp-float { transition: none; }
 }
