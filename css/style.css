@@ -1232,7 +1232,7 @@ img {
 .preview-topline, .preview-index { position: absolute; z-index: 1; top: 20px; left: 22px; right: 22px; display: flex; justify-content: space-between; color: #bcbcbc; font-size: .62rem; letter-spacing: .14em; }
 
 .preview-index { top: auto; bottom: 18px; left: auto; justify-content: end; }
-.zesty-preview-body, .telnet-preview-body { z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+.zesty-preview-body, .telnet-preview-body, .tolab-preview-body, .avenor-preview-body { z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; }
 .preview-eyebrow {
     color: #aaa;
     font-size: .6rem;
@@ -2194,4 +2194,38 @@ button:focus-visible {
  .project-card--featured { grid-column: auto; }
  .project-card--featured .project-preview { min-height: 230px; }
  .project-highlights { margin-left: 18px; margin-right: 18px; font-size: 11px; }
+}
+
+
+/* TOLAB preview spacing and wordmark scale refinement */
+.tolab-preview-body {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+    width: 100%;
+    padding: 12px 16px;
+    text-align: center;
+}
+.tolab-preview-body .preview-eyebrow {
+    max-width: 100%;
+    font-size: .56rem;
+    letter-spacing: .16em;
+    line-height: 1.6;
+}
+.tolab-preview-body .tolab-wordmark {
+    margin: 2px 0 5px;
+    font-size: clamp(2.25rem, 4vw, 3.35rem);
+    line-height: 1.05;
+    letter-spacing: -.055em;
+}
+.tolab-preview-body .preview-caption {
+    margin-top: 1px;
+    line-height: 1.65;
+}
+@media (max-width: 680px) {
+    .tolab-preview-body { gap: 15px; }
+    .tolab-preview-body .tolab-wordmark { font-size: clamp(2.1rem, 9vw, 2.8rem); }
 }
